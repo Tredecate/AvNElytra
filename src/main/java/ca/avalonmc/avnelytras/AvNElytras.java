@@ -1,9 +1,9 @@
-package ca.avalonmc.avnshops.avnshops;
+package ca.avalonmc.avnelytras;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public final class AvNShops extends JavaPlugin {
+public final class AvNElytras extends JavaPlugin {
 	
 	@Override
 	public void onEnable () {

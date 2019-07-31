@@ -1,6 +1,6 @@
 name: AvNShops
 version: ${project.version}
-main: ca.avalonmc.avnshops.avnshops.AvNShops
+main: ca.avalonmc.avnelytras.AvNShops
 api-version: 1.13
 prefix: AvN Shops
 authors: [8BitSummoner, JP, Marcato]
