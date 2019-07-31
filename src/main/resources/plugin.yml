@@ -1,0 +1,8 @@
+name: AvNShops
+version: ${project.version}
+main: ca.avalonmc.avnshops.avnshops.AvNShops
+api-version: 1.13
+prefix: AvN Shops
+authors: [8BitSummoner, JP, Marcato]
+description: Custom plugin developed by and for the Avalon Network
+website: avalonmc.ca
