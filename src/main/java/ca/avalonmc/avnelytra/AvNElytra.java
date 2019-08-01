@@ -32,6 +32,7 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 			
 			player.sendMessage("§2§lYou Started Flying!");
 			player.setGliding(false);
+			e.setCancelled(true);
 
 		} else {
 			
