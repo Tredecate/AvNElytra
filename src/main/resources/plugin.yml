@@ -1,6 +1,6 @@
 name: AvNElytra
 version: ${project.version}
-main: ca.avalonmc.avnelytras.AvNElytra
+main: ca.avalonmc.avnelytra.AvNElytra
 api-version: 1.13
 prefix: AvN Elytra
 authors: [8BitSummoner, JP, Marcato]

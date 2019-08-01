@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AvNElytras" />
+        <module name="AvNElytra" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AvNElytras" target="1.8" />
+      <module name="AvNElytra" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
