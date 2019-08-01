@@ -1,7 +1,6 @@
 package ca.avalonmc.avnelytra;
 
-import ca.avalonmc.avnelytra.command.ElytraDisable;
-import org.bukkit.ChatColor;
+import ca.avalonmc.avnelytra.commands.ElytraDisable;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

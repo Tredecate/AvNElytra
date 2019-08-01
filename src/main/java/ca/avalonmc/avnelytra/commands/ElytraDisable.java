@@ -1,6 +1,5 @@
-package ca.avalonmc.avnelytra.command;
+package ca.avalonmc.avnelytra.commands;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,5 +18,3 @@ public class ElytraDisable implements CommandExecutor {
         return true;
     }
 }
-
-
