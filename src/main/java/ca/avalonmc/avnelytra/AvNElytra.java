@@ -1,5 +1,6 @@
 package ca.avalonmc.avnelytra;
 
+import ca.avalonmc.avnelytra.command.ElytraDisable;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,10 +19,16 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 	public void onEnable () {
 		
 		getServer().getPluginManager().registerEvents(this, this);
-		thisismylogger.info(ChatColor.DARK_GREEN + "**************************");
-		thisismylogger.info(ChatColor.GREEN + "AvNElytra: Plugin Enabled!");
-		thisismylogger.info(ChatColor.DARK_GREEN + "**************************");
-		
+		thisismylogger.info("**************************");
+		thisismylogger.info("AvNElytra: Plugin Enabled!");
+		thisismylogger.info("**************************");
+
+		registerCommands();
+	}
+
+	public void registerCommands() {
+		getCommand("elytradisable").setExecutor(new ElytraDisable());
+
 	}
 	
 	@EventHandler

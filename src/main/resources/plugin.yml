@@ -6,3 +6,6 @@ prefix: AvN Elytra
 authors: [8BitSummoner, JP, Marcato]
 description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
+commands:
+  elytradisable:
+    description: Clips the wings of all those weaklings
