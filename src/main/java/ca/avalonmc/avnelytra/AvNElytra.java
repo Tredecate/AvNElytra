@@ -17,7 +17,9 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 	public void onEnable () {
 		
 		getServer().getPluginManager().registerEvents(this, this);
-		thisismylogger.info("Plugin Enabled! Good morning :)");
+		thisismylogger.info("**************************");
+		thisismylogger.info("AvNElytra: Plugin Enabled!");
+		thisismylogger.info("**************************");
 		
 	}
 	
