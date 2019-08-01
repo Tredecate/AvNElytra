@@ -8,22 +8,29 @@ import java.util.logging.Logger;
 
 public final class AvNElytra extends JavaPlugin {
 	
-	Logger thisismylogger = getLogger();
+	public Logger log = getLogger();
+	
 	
 	@Override
 	public void onEnable () {
 		
-		getServer().getPluginManager().registerEvents(this, this);
-		thisismylogger.info("**************************");
-		thisismylogger.info("AvNElytra: Plugin Enabled!");
-		thisismylogger.info("**************************");
-
-		registerCommands();
+		registerComponents();
+		
+		log.info("**************************");
+		log.info("AvNElytra: Plugin Enabled!");
+		log.info("**************************");
+		
 	}
-
-	public void registerCommands() {
+	
+	
+	public void registerComponents () {
+		
+		// Register event handler
+		getServer().getPluginManager().registerEvents(new EventListener(), this);
+		
+		// Register commands
 		getCommand("elytradisable").setExecutor(new ElytraDisable());
-
+		
 	}
 	
 }
