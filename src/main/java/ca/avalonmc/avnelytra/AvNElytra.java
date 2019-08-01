@@ -1,5 +1,6 @@
 package ca.avalonmc.avnelytra;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,9 +18,9 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 	public void onEnable () {
 		
 		getServer().getPluginManager().registerEvents(this, this);
-		thisismylogger.info("**************************");
-		thisismylogger.info("AvNElytra: Plugin Enabled!");
-		thisismylogger.info("**************************");
+		thisismylogger.info(ChatColor.DARK_GREEN + "**************************");
+		thisismylogger.info(ChatColor.GREEN + "AvNElytra: Plugin Enabled!");
+		thisismylogger.info(ChatColor.DARK_GREEN + "**************************");
 		
 	}
 	
@@ -31,8 +32,7 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 		if(e.isGliding()){
 			
 			player.sendMessage("§2§lYou Started Flying!");
-			player.setGliding(false);
-			e.setCancelled(true);
+			//e.setCancelled(true); to cancel Elytra entirely
 
 		} else {
 			
