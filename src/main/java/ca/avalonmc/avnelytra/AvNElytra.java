@@ -26,7 +26,7 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 		
 		Player player = (Player)e.getEntity();
 		
-		if(player.isGliding()){
+		if(e.isGliding()){
 			
 			player.sendMessage("Hey bish ur flyijing");
 			
