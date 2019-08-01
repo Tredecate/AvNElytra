@@ -18,7 +18,6 @@ public final class AvNElytras extends JavaPlugin implements Listener {
 		
 		getServer().getPluginManager().registerEvents(this, this);
 		thisismylogger.info("Plugin Enabled! Good morning :)");
-		System.out.println("Print test");
 		
 	}
 	
@@ -27,7 +26,7 @@ public final class AvNElytras extends JavaPlugin implements Listener {
 		
 		Player player = (Player)e.getEntity();
 		
-		if(e.isGliding()){
+		if(player.isGliding()){
 			
 			player.sendMessage("Hey bish ur flyijing");
 			
