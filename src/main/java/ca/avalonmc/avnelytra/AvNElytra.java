@@ -1,16 +1,12 @@
 package ca.avalonmc.avnelytra;
 
 import ca.avalonmc.avnelytra.commands.ElytraDisable;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
 
-public final class AvNElytra extends JavaPlugin implements Listener {
+public final class AvNElytra extends JavaPlugin {
 	
 	Logger thisismylogger = getLogger();
 	
@@ -28,24 +24,6 @@ public final class AvNElytra extends JavaPlugin implements Listener {
 	public void registerCommands() {
 		getCommand("elytradisable").setExecutor(new ElytraDisable());
 
-	}
-	
-	@EventHandler
-	public void onGliding(EntityToggleGlideEvent e){
-		
-		Player player = (Player)e.getEntity();
-		
-		if(e.isGliding()){
-			
-			player.sendMessage("§2§lYou Started Flying!");
-			//e.setCancelled(true); to cancel Elytra entirely
-
-		} else {
-			
-			player.sendMessage("§2§lYou Landed!");
-			
-		}
-		
 	}
 	
 }
