@@ -1,8 +1,8 @@
-name: AvNShops
+name: AvNElytra
 version: ${project.version}
-main: ca.avalonmc.avnelytras.AvNShops
+main: ca.avalonmc.avnelytras.AvNElytra
 api-version: 1.13
-prefix: AvN Shops
+prefix: AvN Elytra
 authors: [8BitSummoner, JP, Marcato]
 description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
