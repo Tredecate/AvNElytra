@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-public class ElytraDisable implements CommandExecutor {
+public class ElytraToggle implements CommandExecutor {
 	
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		

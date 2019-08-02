@@ -15,13 +15,13 @@ public class EventListener implements Listener {
 		
 		if (e.isGliding()) {
 			
-			player.sendMessage("§2§lYou Started Flying!");
+			player.sendMessage("§a[DEBUG] §2§lYou Started Flying!");
 			//e.setCancelled(true); to cancel Elytra entirely
 			
 		}
 		else {
 			
-			player.sendMessage("§2§lYou Landed!");
+			player.sendMessage("§a[DEBUG] §2§lYou Landed!");
 			
 		}
 		

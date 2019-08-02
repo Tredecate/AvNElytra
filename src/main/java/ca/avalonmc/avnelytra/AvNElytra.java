@@ -1,6 +1,6 @@
 package ca.avalonmc.avnelytra;
 
-import ca.avalonmc.avnelytra.commands.ElytraDisable;
+import ca.avalonmc.avnelytra.commands.ElytraToggle;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -12,13 +12,13 @@ public final class AvNElytra extends JavaPlugin {
 	
 	
 	@Override
-	public void onEnable () {
+	public void onEnable () {  //ON PLUGIN ENABLE
 		
 		registerComponents();
 		
-		log.info("**************************");
-		log.info("AvNElytra: Plugin Enabled!");
-		log.info("**************************");
+		log.info("-=-        -=+=-        -=-");
+		log.info("AvNElytra: Plugin Enabled! ");
+		log.info("-=-        -=+=-        -=-");
 		
 	}
 	
@@ -29,8 +29,17 @@ public final class AvNElytra extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new EventListener(), this);
 		
 		// Register commands
-		getCommand("elytradisable").setExecutor(new ElytraDisable());
+		getCommand("elytratoggle").setExecutor(new ElytraToggle());
 		
+	}
+
+		public void onDisable () {  //ON PLUGIN DISABLE
+
+			log.info("-=-        -=+=-        -=-");
+			log.info("AvNElytra: Plugin Disabled!");
+			log.info("-=-        -=+=-        -=-");
+
+
 	}
 	
 }
