@@ -21,6 +21,7 @@ public class ElytraToggle implements CommandExecutor {
 			Player player = (Player) sender;
 			if (elytratoggle.contains(player.getName())) {
 				player.sendMessage("§2You §uDISABLED§2 Elytras!");
+                elytratoggle.remove(player.getName());
 				return true;
 			}
 
