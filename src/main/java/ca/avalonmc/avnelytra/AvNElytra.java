@@ -3,12 +3,15 @@ package ca.avalonmc.avnelytra;
 import ca.avalonmc.avnelytra.commands.ElytraToggle;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 
 public final class AvNElytra extends JavaPlugin {
 	
 	public Logger log = getLogger();
+	
+	public static ArrayList<String> elytratoggle = new ArrayList<>();
 	
 	
 	@Override
@@ -23,6 +26,16 @@ public final class AvNElytra extends JavaPlugin {
 	}
 	
 	
+	@Override
+	public void onDisable () {  //ON PLUGIN DISABLE
+		
+		log.info("===========================");
+		log.info("AvNElytra: Plugin Disabled!");
+		log.info("===========================");
+		
+	}
+	
+	
 	public void registerComponents () {
 		
 		// Register event handler
@@ -31,15 +44,6 @@ public final class AvNElytra extends JavaPlugin {
 		// Register commands
 		getCommand("elytratoggle").setExecutor(new ElytraToggle());
 		
-	}
-
-		public void onDisable () {  //ON PLUGIN DISABLE
-
-			log.info("===========================");
-			log.info("AvNElytra: Plugin Disabled!");
-			log.info("===========================");
-
-
 	}
 	
 }
