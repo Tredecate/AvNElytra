@@ -1,6 +1,7 @@
 package ca.avalonmc.avnelytra;
 
 import ca.avalonmc.avnelytra.commands.ElytraToggle;
+import ca.avalonmc.avnelytra.commands.ElytraToggleAll;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -9,9 +10,10 @@ import java.util.logging.Logger;
 
 public final class AvNElytra extends JavaPlugin {
 	
-	public Logger log = getLogger();
+	public static Logger log;
 	
 	public static ArrayList<String> elytratoggle = new ArrayList<>();
+	public static Boolean globalelytratoggle = true;
 	
 	
 	@Override
@@ -43,6 +45,10 @@ public final class AvNElytra extends JavaPlugin {
 		
 		// Register commands
 		getCommand("elytratoggle").setExecutor(new ElytraToggle());
+		getCommand("elytratoggleall").setExecutor(new ElytraToggleAll());
+		
+		// Instantiate logger
+		log = getLogger();
 		
 	}
 	

@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 
 import static ca.avalonmc.avnelytra.AvNElytra.elytratoggle;
+import static ca.avalonmc.avnelytra.AvNElytra.globalelytratoggle;
 
 
 public class EventListener implements Listener {
@@ -16,7 +17,7 @@ public class EventListener implements Listener {
 		
 		Player player = (Player)e.getEntity();
 		
-		if (!elytratoggle.contains(player.getName()) && e.isGliding()) {
+		if (e.isGliding() && (!elytratoggle.contains(player.getName()) || !globalelytratoggle)) {
 			
 			player.sendMessage("§a[DEBUG] §2§lYou are not allowed to fly!");
 			e.setCancelled(true);
@@ -26,4 +27,3 @@ public class EventListener implements Listener {
 	}
 	
 }
-
