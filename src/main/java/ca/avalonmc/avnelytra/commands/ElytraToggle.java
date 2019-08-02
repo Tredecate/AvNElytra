@@ -20,7 +20,7 @@ public class ElytraToggle implements CommandExecutor {
 				
 				Player target = getServer().getPlayer(args[0]);
 				
-				if (!(target instanceof Player)) {
+				if (target == null) {
 					
 					sender.sendMessage("The target needs to be a Player!");
 					
@@ -33,6 +33,7 @@ public class ElytraToggle implements CommandExecutor {
 					sender.sendMessage("§2You §nDISABLED§2 Elytras for " + target.getName());
 					target.sendMessage(sender.getName() + " §2§nclipped your wings!");
 					elytratoggle.remove(target.getName());
+					target.setGliding(false);
 					
 					return true; // The target could fly, now they can't
 					
@@ -53,6 +54,7 @@ public class ElytraToggle implements CommandExecutor {
 				
 				player.sendMessage("§2You §nDISABLED§2 your elytra!");
 				elytratoggle.remove(player.getName());
+				player.setGliding(false);
 				
 				return true; // The player could fly, now they can't
 				
