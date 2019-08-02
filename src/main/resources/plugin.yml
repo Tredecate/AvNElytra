@@ -9,3 +9,5 @@ website: avalonmc.ca
 commands:
   elytratoggle:
     description: Clips the wings of all those weaklings
+  elytratoggleall:
+    description: Clips the wings of ALL the weaklings
