@@ -5,23 +5,21 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 
+import static ca.avalonmc.avnelytra.AvNElytra.elytratoggle;
+
 
 public class EventListener implements Listener {
 	
+	
 	@EventHandler
 	public void onGliding (EntityToggleGlideEvent e) {
-
+		
 		Player player = (Player)e.getEntity();
-
-		if (e.isGliding()) {
+		
+		if (!elytratoggle.contains(player.getName()) && e.isGliding()) {
 			
-			player.sendMessage("§a[DEBUG] §2§lYou Started Flying!");
-			//e.setCancelled(true); to cancel Elytra entirely
-			
-		}
-		else {
-			
-			player.sendMessage("§a[DEBUG] §2§lYou Landed!");
+			player.sendMessage("§a[DEBUG] §2§lYou are not allowed to fly!");
+			e.setCancelled(true);
 			
 		}
 		
