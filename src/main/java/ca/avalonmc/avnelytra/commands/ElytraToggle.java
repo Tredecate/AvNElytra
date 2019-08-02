@@ -16,7 +16,7 @@ public class ElytraToggle implements CommandExecutor {
 		
 		if (label.equalsIgnoreCase("elytratoggle")) {
 			
-			if (args.length > 0) {
+			if (args.length > 0) { // COMMAND HAS A TARGET
 				
 				Player target = getServer().getPlayer(args[0]);
 				
@@ -24,59 +24,48 @@ public class ElytraToggle implements CommandExecutor {
 					
 					sender.sendMessage("The target needs to be a Player!");
 					
-					return false;
-					
-				}
-				else {
-					
-					if (elytratoggle.contains(target.getName())) {
-						
-						sender.sendMessage("§2You §nDISABLED§2 Elytras for " + target.getName());
-						target.sendMessage(sender.getName() + " §2§nclipped your wings!");
-						elytratoggle.remove(target.getName());
-						
-						return true;
-						
-					}
-					else {
-						
-						sender.sendMessage("§2You §nENABLED§2 Elytras for " + target.getName());
-						target.sendMessage(sender.getName() + " §2§nhas healed your wings!");
-						elytratoggle.add(target.getName());
-						
-						return true;
-						
-					}
+					return false; // The target isn't a player
 					
 				}
 				
-			}
-			else {
-				
-				Player player = (Player)sender;
-				
-				if (elytratoggle.contains(player.getName())) {
+				if (elytratoggle.contains(target.getName())) {
 					
-					player.sendMessage("§2You §nDISABLED§2 Elytras!");
-					elytratoggle.remove(player.getName());
+					sender.sendMessage("§2You §nDISABLED§2 Elytras for " + target.getName());
+					target.sendMessage(sender.getName() + " §2§nclipped your wings!");
+					elytratoggle.remove(target.getName());
 					
-					return true;
+					return true; // The target could fly, now they can't
 					
 				}
-				else {
-					
-					player.sendMessage("§2You §nENABLED§2 Elytras!");
-					elytratoggle.add(player.getName());
-					
-					return true;
-					
-				}
+				
+				sender.sendMessage("§2You §nENABLED§2 Elytras for " + target.getName());
+				target.sendMessage(sender.getName() + " §2§nhas healed your wings!");
+				elytratoggle.add(target.getName());
+				
+				return true; // The target couldn't fly, now they can
 				
 			}
 			
+			// COMMAND DOESN'T HAVE A TARGET
+			Player player = (Player)sender;
+			
+			if (elytratoggle.contains(player.getName())) {
+				
+				player.sendMessage("§2You §nDISABLED§2 your elytra!");
+				elytratoggle.remove(player.getName());
+				
+				return true; // The player could fly, now they can't
+				
+			}
+			
+			player.sendMessage("§2You §nENABLED§2 elytra!");
+			elytratoggle.add(player.getName());
+			
+			return true; // The player couldn't fly, now they can
+			
 		}
 		
-		return false;
+		return false; // COMMAND FAILED
 		
 	}
 	
