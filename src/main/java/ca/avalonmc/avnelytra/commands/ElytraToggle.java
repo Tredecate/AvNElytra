@@ -31,7 +31,7 @@ public class ElytraToggle implements CommandExecutor {
 				if (elytratoggle.contains(target.getName())) {
 					
 					sender.sendMessage("§2You §nDISABLED§2 Elytras for " + target.getName());
-					target.sendMessage(sender.getName() + " §2§nclipped your wings!");
+					target.sendMessage("§6§l" + sender.getName() + " §2§lclipped your wings!");
 					elytratoggle.remove(target.getName());
 					target.setGliding(false);
 					
@@ -40,7 +40,7 @@ public class ElytraToggle implements CommandExecutor {
 				}
 				
 				sender.sendMessage("§2You §nENABLED§2 Elytras for " + target.getName());
-				target.sendMessage(sender.getName() + " §2§nhas healed your wings!");
+				target.sendMessage("§6§l" + sender.getName() + " §2§lhas healed your wings!");
 				elytratoggle.add(target.getName());
 				
 				return true; // The target couldn't fly, now they can
@@ -60,7 +60,7 @@ public class ElytraToggle implements CommandExecutor {
 				
 			}
 			
-			player.sendMessage("§2You §nENABLED§2 elytra!");
+			player.sendMessage("§2You §nENABLED§2 your elytra!");
 			elytratoggle.add(player.getName());
 			
 			return true; // The player couldn't fly, now they can
