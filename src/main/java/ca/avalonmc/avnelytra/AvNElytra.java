@@ -16,9 +16,9 @@ public final class AvNElytra extends JavaPlugin {
 		
 		registerComponents();
 		
-		log.info("-=-        -=+=-        -=-");
+		log.info("===========================");
 		log.info("AvNElytra: Plugin Enabled! ");
-		log.info("-=-        -=+=-        -=-");
+		log.info("===========================");
 		
 	}
 	
@@ -35,9 +35,9 @@ public final class AvNElytra extends JavaPlugin {
 
 		public void onDisable () {  //ON PLUGIN DISABLE
 
-			log.info("-=-        -=+=-        -=-");
+			log.info("===========================");
 			log.info("AvNElytra: Plugin Disabled!");
-			log.info("-=-        -=+=-        -=-");
+			log.info("===========================");
 
 
 	}

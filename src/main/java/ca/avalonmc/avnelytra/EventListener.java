@@ -10,9 +10,9 @@ public class EventListener implements Listener {
 	
 	@EventHandler
 	public void onGliding (EntityToggleGlideEvent e) {
-		
+
 		Player player = (Player)e.getEntity();
-		
+
 		if (e.isGliding()) {
 			
 			player.sendMessage("§a[DEBUG] §2§lYou Started Flying!");
@@ -28,3 +28,4 @@ public class EventListener implements Listener {
 	}
 	
 }
+
