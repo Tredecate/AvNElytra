@@ -8,6 +8,6 @@ description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
 commands:
   elytratoggle:
-    description: Clips the wings of all those weaklings
+    description: Gives you the ability to clip wings
   elytratoggleall:
     description: Clips the wings of ALL the weaklings
