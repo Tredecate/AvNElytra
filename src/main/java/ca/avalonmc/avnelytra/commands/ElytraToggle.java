@@ -1,5 +1,6 @@
 package ca.avalonmc.avnelytra.commands;
 
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -55,12 +56,14 @@ public class ElytraToggle implements CommandExecutor {
 				player.sendMessage("§2You §nDISABLED§2 your Elytra!");
 				elytratoggle.remove(player.getName());
 				player.setGliding(false);
+                player.playSound(player.getLocation(), Sound.ITEM_SHIELD_BREAK, 0.3f, 0f);
 				
 				return true; // The player could fly, now they can't
 				
 			}
 			
 			player.sendMessage("§2You §nENABLED§2 your Elytra!");
+            player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_USE, 0.3f, 1.2f);
 			elytratoggle.add(player.getName());
 			
 			return true; // The player couldn't fly, now they can
@@ -70,5 +73,4 @@ public class ElytraToggle implements CommandExecutor {
 		return false; // COMMAND FAILED
 		
 	}
-	
 }
