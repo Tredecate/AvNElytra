@@ -73,4 +73,5 @@ public class ElytraToggle implements CommandExecutor {
 		return false; // COMMAND FAILED
 		
 	}
+	
 }
