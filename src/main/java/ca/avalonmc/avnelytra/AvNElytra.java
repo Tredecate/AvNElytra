@@ -56,6 +56,8 @@ public final class AvNElytra extends JavaPlugin {
 		
 		// Register commands
 		getCommand("elytratoggle").setExecutor(new ElytraToggle());
+		getCommand("rocketboosttoggle").setExecutor(new ElytraToggle());
+		getCommand("tridentboosttoggle").setExecutor(new ElytraToggle());
 		
 		// Instantiate logger
 		log = getLogger();

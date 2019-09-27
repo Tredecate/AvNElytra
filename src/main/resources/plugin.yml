@@ -9,3 +9,7 @@ website: avalonmc.ca
 commands:
   elytratoggle:
     description: Stop all users in the server from using elytra
+  rocketboosttoggle:
+    description: Stop all users in the server from using firework rockets to boost flight-speed
+  tridentboosttoggle:
+    description: Stop all users in the server from using tridents to boost flight-speed
