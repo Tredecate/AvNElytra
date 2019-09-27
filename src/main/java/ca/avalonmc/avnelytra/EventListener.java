@@ -49,9 +49,9 @@ public class EventListener implements Listener {
 					
 					Vector v = player.getVelocity();
 					
-					if (v.length() > maxSpeed) {
+					if (v.length() > maxSpeed / scaleFactor) {
 						
-						player.setVelocity(v.multiply(1 / (v.length() / maxSpeed)));
+						player.setVelocity(v.multiply(1 / (v.length() / (maxSpeed / scaleFactor))));
 						
 					}
 					

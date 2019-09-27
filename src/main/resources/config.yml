@@ -1,9 +1,11 @@
 # AvNElytra Configuration File
 # Version 1.0
+# Speedscale controls the ratio between the "MaxSpeed" value and the Km/H value provided by CMI.
 
 Elytra:
   Disabled: false
   MaxSpeed: 0
+  SpeedScale: 10
 Boosts:
   RocketBoostDisabled: false
   TridentBoostDisabled: false

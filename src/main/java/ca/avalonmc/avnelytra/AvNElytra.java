@@ -19,6 +19,7 @@ public final class AvNElytra extends JavaPlugin {
 	public static Boolean rocketBoostDisabled;
 	public static Boolean tridentBoostDisabled;
 	public static double maxSpeed;
+	public static double scaleFactor;
 	
 	
 	@Override
@@ -75,7 +76,8 @@ public final class AvNElytra extends JavaPlugin {
 		elytraDisabled = Boolean.valueOf(getConfigFromKey("Elytra.Disabled"));
 		rocketBoostDisabled = Boolean.valueOf(getConfigFromKey("Boosts.RocketBoostDisabled"));
 		tridentBoostDisabled = Boolean.valueOf(getConfigFromKey("Boosts.TridentBoostDisabled"));
-		maxSpeed = Integer.parseInt(getConfigFromKey("Elytra.MaxSpeed"));
+		maxSpeed = Double.parseDouble(getConfigFromKey("Elytra.MaxSpeed"));
+		scaleFactor = 75 / Double.parseDouble(getConfigFromKey("Elytra.SpeedScale"));
 		
 	}
 	
