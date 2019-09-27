@@ -16,7 +16,7 @@ public class SpeedCap implements CommandExecutor {
 		
 		if (label.equalsIgnoreCase("speedcap")) {
 			
-			if (args[0].length() < 1) {
+			if (args.length < 1) {
 				
 				if (maxSpeed > 0) {
 					
