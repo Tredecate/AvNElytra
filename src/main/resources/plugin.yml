@@ -1,13 +1,11 @@
 name: AvNElytra
 version: ${project.version}
 main: ca.avalonmc.avnelytra.AvNElytra
-api-version: 1.13
+api-version: 1.14.1
 prefix: AvN Elytra
 authors: [8BitSummoner, JP, Marcato]
 description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
 commands:
   elytratoggle:
-    description: Gives you the ability to clip wings
-  elytratoggleall:
-    description: Clips the wings of ALL the weaklings
+    description: Stop all users in the server from using elytra
