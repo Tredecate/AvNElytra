@@ -92,7 +92,7 @@ public final class AvNElytra extends JavaPlugin {
 	}
 	
 	
-	public static String getConfigFromKey (String key) {
+	private static String getConfigFromKey (String key) {
 		
 		return config.getString(key);
 		
