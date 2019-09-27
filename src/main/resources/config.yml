@@ -1,0 +1,7 @@
+# AvNElytra Configuration File
+# Version 1.0
+
+ElytraDisabled: false
+Boosts:
+  RocketBoostDisabled: false
+  TridentBoostDisabled: false
