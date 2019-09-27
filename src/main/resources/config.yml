@@ -1,7 +1,9 @@
 # AvNElytra Configuration File
 # Version 1.0
 
-ElytraDisabled: false
+Elytra:
+  Disabled: false
+  MaxSpeed: 0
 Boosts:
   RocketBoostDisabled: false
   TridentBoostDisabled: false

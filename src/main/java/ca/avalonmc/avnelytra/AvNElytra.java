@@ -2,6 +2,7 @@ package ca.avalonmc.avnelytra;
 
 import ca.avalonmc.avnelytra.commands.ElytraToggle;
 import ca.avalonmc.avnelytra.commands.RocketBoostToggle;
+import ca.avalonmc.avnelytra.commands.SpeedCap;
 import ca.avalonmc.avnelytra.commands.TridentBoostToggle;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -11,12 +12,13 @@ import java.util.logging.Logger;
 
 public final class AvNElytra extends JavaPlugin {
 	
-	public static Logger log;
 	private static FileConfiguration config;
 	
+	public static Logger log;
 	public static Boolean elytraDisabled;
 	public static Boolean rocketBoostDisabled;
 	public static Boolean tridentBoostDisabled;
+	public static int maxSpeed;
 	
 	
 	@Override
@@ -54,12 +56,13 @@ public final class AvNElytra extends JavaPlugin {
 		config = this.getConfig();
 		
 		// Register event handler
-		getServer().getPluginManager().registerEvents(new EventListener(), this);
+		getServer().getPluginManager().registerEvents(new EventListener(this), this);
 		
 		// Register commands
 		getCommand("elytratoggle").setExecutor(new ElytraToggle());
 		getCommand("rocketboosttoggle").setExecutor(new RocketBoostToggle());
 		getCommand("tridentboosttoggle").setExecutor(new TridentBoostToggle());
+		getCommand("speedcap").setExecutor(new SpeedCap());
 		
 		// Instantiate logger
 		log = getLogger();
@@ -69,23 +72,25 @@ public final class AvNElytra extends JavaPlugin {
 	
 	private void instantiateVariables () {
 		
-		elytraDisabled = Boolean.valueOf(getConfigFromKey("ElytraDisabled"));
-		rocketBoostDisabled = Boolean.valueOf((getConfigFromKey("Boosts.RocketBoostDisabled")));
-		tridentBoostDisabled = Boolean.valueOf((getConfigFromKey("Boosts.TridentBoostDisabled")));
+		elytraDisabled = Boolean.valueOf(getConfigFromKey("Elytra.Disabled"));
+		rocketBoostDisabled = Boolean.valueOf(getConfigFromKey("Boosts.RocketBoostDisabled"));
+		tridentBoostDisabled = Boolean.valueOf(getConfigFromKey("Boosts.TridentBoostDisabled"));
+		maxSpeed = Integer.parseInt(getConfigFromKey("Elytra.MaxSpeed"));
 		
 	}
 	
 	
 	private void saveVariables () {
 		
-		config.set("ElytraDisabled", elytraDisabled);
+		config.set("Elytra.Disabled", elytraDisabled);
 		config.set("Boosts.RocketBoostDisabled", rocketBoostDisabled);
 		config.set("Boosts.TridentBoostDisabled", tridentBoostDisabled);
+		config.set("Elytra.MaxSpeed", maxSpeed);
 		
 	}
 	
 	
-	public String getConfigFromKey (String key) {
+	public static String getConfigFromKey (String key) {
 		
 		return config.getString(key);
 		

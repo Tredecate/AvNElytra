@@ -13,3 +13,5 @@ commands:
     description: Stop all users in the server from using firework rockets to boost flight-speed
   tridentboosttoggle:
     description: Stop all users in the server from using tridents to boost flight-speed
+  speedcap:
+    description: Sets/enables or disables an experimental speed limit on elytra flight.
