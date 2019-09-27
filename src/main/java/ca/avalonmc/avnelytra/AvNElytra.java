@@ -1,6 +1,5 @@
 package ca.avalonmc.avnelytra;
 
-import ca.avalonmc.avnelytra.commands.ElytraToggle;
 import ca.avalonmc.avnelytra.commands.ElytraToggleAll;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -44,7 +43,6 @@ public final class AvNElytra extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new EventListener(), this);
 		
 		// Register commands
-		getCommand("elytratoggle").setExecutor(new ElytraToggle());
 		getCommand("elytratoggleall").setExecutor(new ElytraToggleAll());
 		
 		// Instantiate logger
