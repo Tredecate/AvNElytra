@@ -1,17 +1,31 @@
 package ca.avalonmc.avnelytra;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.util.Vector;
+
+import java.util.HashMap;
+import java.util.UUID;
 
 import static ca.avalonmc.avnelytra.AvNElytra.*;
 
 
 public class EventListener implements Listener {
 	
+	private AvNElytra plugin;
+	private HashMap<UUID, Integer> glidingPlayers = new HashMap<UUID, Integer>();
+	
+	
+	EventListener (AvNElytra plugin) {
+		
+		this.plugin = plugin;
+		
+	}
 	
 	@EventHandler
 	public void onGliding (EntityToggleGlideEvent e) {
@@ -22,6 +36,33 @@ public class EventListener implements Listener {
 			
 			player.sendMessage("§cYou are not allowed to fly!");
 			e.setCancelled(true);
+			
+			return;
+			
+		}
+		
+		if (maxSpeed != 0 && e.isGliding()) {
+			
+			glidingPlayers.put(player.getUniqueId(), Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+				
+				public void run () {
+					
+					Vector v = player.getVelocity();
+					
+					if (v.length() > maxSpeed) {
+						
+						player.setVelocity(v.multiply(1 / (v.length() / maxSpeed)));
+						
+					}
+					
+				}
+				
+			}, 0L, 1L));
+			
+		}
+		else {
+			
+			Bukkit.getScheduler().cancelTask(glidingPlayers.get(player.getUniqueId()));
 			
 		}
 		
