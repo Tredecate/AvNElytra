@@ -60,7 +60,7 @@ public class EventListener implements Listener {
 			}, 0L, 1L));
 			
 		}
-		else {
+		else if (maxSpeed != 0) {
 			
 			Bukkit.getScheduler().cancelTask(glidingPlayers.get(player.getUniqueId()));
 			
