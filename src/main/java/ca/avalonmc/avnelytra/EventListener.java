@@ -55,6 +55,13 @@ public class EventListener implements Listener {
 						
 					}
 					
+					if (maxSpeed == 0) {
+						
+						player.setGliding(false);
+						Bukkit.getScheduler().cancelTask(glidingPlayers.get(player.getUniqueId()));
+						
+					}
+					
 				}
 				
 			}, 0L, 1L));
