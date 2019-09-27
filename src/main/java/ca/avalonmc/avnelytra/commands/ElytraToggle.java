@@ -10,12 +10,12 @@ import static ca.avalonmc.avnelytra.AvNElytra.log;
 import static org.bukkit.Bukkit.getServer;
 
 
-public class ElytraToggleAll implements CommandExecutor {
+public class ElytraToggle implements CommandExecutor {
 	
 	
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
-		if (label.equalsIgnoreCase("elytratoggleall")) {
+		if (label.equalsIgnoreCase("elytratoggle")) {
 			
 			if (globalelytratoggle) {
 				
