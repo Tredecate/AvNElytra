@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static ca.avalonmc.avnelytra.AvNElytra.globalelytratoggle;
+import static ca.avalonmc.avnelytra.AvNElytra.elytraDisabled;
 import static ca.avalonmc.avnelytra.AvNElytra.log;
 import static org.bukkit.Bukkit.getServer;
 
@@ -17,11 +17,12 @@ public class ElytraToggle implements CommandExecutor {
 		
 		if (label.equalsIgnoreCase("elytratoggle")) {
 			
-			if (globalelytratoggle) {
+			if (!elytraDisabled) {
 				
 				sender.sendMessage("§2You §nDISABLED§2 Elytras in SERVER: " + getServer().getName());
 				log.info(sender.getName() + " disabled elytra flight.");
-				globalelytratoggle = false;
+				
+				elytraDisabled = true;
 				
 				for (Player p : getServer().getOnlinePlayers()) {
 					
@@ -29,15 +30,16 @@ public class ElytraToggle implements CommandExecutor {
 					
 				}
 				
-				return true; // Global elytra was on, now it's off
+				return true; // Elytra flight was on, now it's off
 				
 			}
 			
 			sender.sendMessage("§2You §nENABLED§2 Elytras in SERVER: " + getServer().getName());
 			log.info(sender.getName() + " enabled elytra flight.");
-			globalelytratoggle = true;
 			
-			return true; // Global elytra was off, now it's on
+			elytraDisabled = false;
+			
+			return true; // Elytra flight was off, now it's on
 			
 		}
 		

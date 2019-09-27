@@ -9,16 +9,19 @@ import java.util.logging.Logger;
 
 public final class AvNElytra extends JavaPlugin {
 	
-	private static FileConfiguration config;
 	public static Logger log;
+	private static FileConfiguration config;
 	
-	public static Boolean globalelytratoggle = true;
+	public static Boolean elytraDisabled;
+	public static Boolean rocketBoostDisabled;
+	public static Boolean tridentBoostDisabled;
 	
 	
 	@Override
 	public void onEnable () {  //ON PLUGIN ENABLE
 		
 		registerComponents();
+		instantiateVariables();
 		
 		log.info("===========================");
 		log.info("AvNElytra: Plugin Enabled! ");
@@ -30,6 +33,7 @@ public final class AvNElytra extends JavaPlugin {
 	@Override
 	public void onDisable () {  //ON PLUGIN DISABLE
 		
+		saveVariables();
 		this.saveConfig();
 		
 		log.info("===========================");
@@ -39,9 +43,9 @@ public final class AvNElytra extends JavaPlugin {
 	}
 	
 	
-	public void registerComponents () {
+	private void registerComponents () {
 		
-		// Create config file
+		// Create config file (if needed)
 		saveDefaultConfig();
 		
 		// Get config
@@ -59,16 +63,27 @@ public final class AvNElytra extends JavaPlugin {
 	}
 	
 	
-	public FileConfiguration getCurrentConfig () {
+	private void instantiateVariables () {
 		
-		return config;
+		elytraDisabled = Boolean.valueOf(getConfigFromKey("ElytraDisabled"));
+		rocketBoostDisabled = Boolean.valueOf((getConfigFromKey("Boosts.RocketBoostDisabled")));
+		tridentBoostDisabled = Boolean.valueOf((getConfigFromKey("Boosts.TridentBoostDisabled")));
 		
 	}
 	
 	
-	public void saveCurrentConfig () {
+	private void saveVariables () {
 		
-		getCurrentConfig().set("ElytraDisabled", globalelytratoggle);
+		config.set("ElytraDisabled", elytraDisabled);
+		config.set("Boosts.RocketBoostDisabled", rocketBoostDisabled);
+		config.set("Boosts.TridentBoostDisabled", tridentBoostDisabled);
+		
+	}
+	
+	
+	public String getConfigFromKey (String key) {
+		
+		return config.getString(key);
 		
 	}
 	

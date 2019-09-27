@@ -3,7 +3,7 @@ version: ${project.version}
 main: ca.avalonmc.avnelytra.AvNElytra
 api-version: 1.14.1
 prefix: AvN Elytra
-authors: [8BitSummoner, JP, Marcato]
+authors: [8BitSummoner, JP]
 description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
 commands:
