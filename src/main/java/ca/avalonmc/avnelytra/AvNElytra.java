@@ -1,6 +1,8 @@
 package ca.avalonmc.avnelytra;
 
 import ca.avalonmc.avnelytra.commands.ElytraToggle;
+import ca.avalonmc.avnelytra.commands.RocketBoostToggle;
+import ca.avalonmc.avnelytra.commands.TridentBoostToggle;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -56,8 +58,8 @@ public final class AvNElytra extends JavaPlugin {
 		
 		// Register commands
 		getCommand("elytratoggle").setExecutor(new ElytraToggle());
-		getCommand("rocketboosttoggle").setExecutor(new ElytraToggle());
-		getCommand("tridentboosttoggle").setExecutor(new ElytraToggle());
+		getCommand("rocketboosttoggle").setExecutor(new RocketBoostToggle());
+		getCommand("tridentboosttoggle").setExecutor(new TridentBoostToggle());
 		
 		// Instantiate logger
 		log = getLogger();
