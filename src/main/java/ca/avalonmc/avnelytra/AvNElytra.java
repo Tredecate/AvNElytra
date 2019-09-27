@@ -11,7 +11,6 @@ public final class AvNElytra extends JavaPlugin {
 	
 	public static Logger log;
 	
-	public static ArrayList<String> elytratoggle = new ArrayList<>();
 	public static Boolean globalelytratoggle = true;
 	
 	
