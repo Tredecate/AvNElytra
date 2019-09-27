@@ -18,7 +18,7 @@ public final class AvNElytra extends JavaPlugin {
 	public static Boolean elytraDisabled;
 	public static Boolean rocketBoostDisabled;
 	public static Boolean tridentBoostDisabled;
-	public static int maxSpeed;
+	public static double maxSpeed;
 	
 	
 	@Override

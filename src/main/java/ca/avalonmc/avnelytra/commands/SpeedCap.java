@@ -6,7 +6,6 @@ import org.bukkit.command.CommandSender;
 
 import static ca.avalonmc.avnelytra.AvNElytra.log;
 import static ca.avalonmc.avnelytra.AvNElytra.maxSpeed;
-import static java.lang.Integer.parseInt;
 
 
 public class SpeedCap implements CommandExecutor {
@@ -30,9 +29,9 @@ public class SpeedCap implements CommandExecutor {
 				
 			}
 			
-			if (parseInt(args[0]) > 0) {
+			if (Double.parseDouble(args[0]) > 0) {
 				
-				maxSpeed = parseInt(args[0]);
+				maxSpeed = Double.parseDouble(args[0]);
 				
 				sender.sendMessage("§2You set the elytra speed cap to: " + maxSpeed);
 				log.info(sender.getName() + " set the elytra speed cap to: " + maxSpeed);
