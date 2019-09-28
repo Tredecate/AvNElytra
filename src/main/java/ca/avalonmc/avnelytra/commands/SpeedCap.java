@@ -9,21 +9,30 @@ import static ca.avalonmc.avnelytra.AvNElytra.*;
 
 public class SpeedCap implements CommandExecutor {
 	
+	private String label;
+	
+	
+	public SpeedCap (String label) {
+		
+		this.label = label;
+		
+	}
+	
 	
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
-		if (label.equalsIgnoreCase("speedcap")) {
+		if (label.equalsIgnoreCase(this.label)) {
 			
 			if (args.length < 1) {
 				
 				if (maxSpeed > 0) {
 					
-					sender.sendMessage("§2The current elytra speed cap is: " + maxSpeed + ", with an approximate ratio of 1:" + (75 / scaleFactor) + "km/h.");
+					sender.sendMessage(errorPrefix + "The current elytra speed cap is: §d" + maxSpeed + "§7, with an approximate ratio of §d1:" + (75 / scaleFactor) + "§7km/h.");
 					return true;
 					
 				}
 				
-				sender.sendMessage("§2The elytra speed cap is currently disabled.");
+				sender.sendMessage(errorPrefix + "The elytra speed cap is currently disabled.");
 				return true;
 				
 			}
@@ -32,8 +41,8 @@ public class SpeedCap implements CommandExecutor {
 				
 				maxSpeed = Double.parseDouble(args[0]);
 				
-				sender.sendMessage("§2You set the elytra speed cap to: " + maxSpeed);
-				log.info(sender.getName() + " set the elytra speed cap to: " + maxSpeed);
+				sender.sendMessage(errorPrefix + "You set the elytra speed cap to: §d" + maxSpeed + "§7.");
+				log.info(sender.getName() + " set the elytra speed cap to: " + maxSpeed + ".");
 				
 				return true;
 				
@@ -41,7 +50,7 @@ public class SpeedCap implements CommandExecutor {
 			
 			maxSpeed = 0;
 			
-			sender.sendMessage("§2You disabled the elytra speed cap.");
+			sender.sendMessage(errorPrefix + "You disabled the elytra speed cap.");
 			log.info(sender.getName() + " disabled the elytra speed cap.");
 			
 			return true;
