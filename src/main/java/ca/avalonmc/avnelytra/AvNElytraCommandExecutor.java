@@ -45,17 +45,17 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 					
 				}
 				
-				sender.sendMessage(errorPrefix + "§d Invalid subcommand.");
+				sender.sendMessage(errorPrefix + "Invalid subcommand.");
 				return false;
 				
 			}
 			
-			sender.sendMessage(errorPrefix + "§d Use §n/avnelytra help§r§d to list available commands.");
+			sender.sendMessage(errorPrefix + "Use §d/avnelytra help§7 to list available commands.");
 			return false;
 			
 		}
 		
-		sender.sendMessage(errorPrefix + "§d Insufficient permission.");
+		sender.sendMessage(errorPrefix + "Insufficient permission.");
 		return false;
 		
 	}
