@@ -4,8 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import static ca.avalonmc.avnelytra.AvNElytra.log;
-import static ca.avalonmc.avnelytra.AvNElytra.maxSpeed;
+import static ca.avalonmc.avnelytra.AvNElytra.*;
 
 
 public class SpeedCap implements CommandExecutor {
@@ -19,7 +18,7 @@ public class SpeedCap implements CommandExecutor {
 				
 				if (maxSpeed > 0) {
 					
-					sender.sendMessage("§2The current elytra speed cap is: " + maxSpeed);
+					sender.sendMessage("§2The current elytra speed cap is: " + maxSpeed + ", with an approximate ratio of 1:" + (75 / scaleFactor) + "km/h.");
 					return true;
 					
 				}
