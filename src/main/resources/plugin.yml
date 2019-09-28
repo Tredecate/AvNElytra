@@ -3,15 +3,11 @@ version: ${project.version}
 main: ca.avalonmc.avnelytra.AvNElytra
 api-version: 1.13
 prefix: AvN Elytra
-authors: [8BitSummoner, JP]
+authors: [8BitSummoner]
 description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
 commands:
-  elytratoggle:
-    description: Stop all users in the server from using elytra
-  rocketboosttoggle:
-    description: Stop all users in the server from using firework rockets to boost flight-speed
-  tridentboosttoggle:
-    description: Stop all users in the server from using tridents to boost flight-speed
-  speedcap:
-    description: Sets/enables or disables an experimental speed limit on elytra flight.
+  avnelytra:
+    description: The base AvN Elytra command.
+    aliases: [avne]
+    permission: avnelytra.manage

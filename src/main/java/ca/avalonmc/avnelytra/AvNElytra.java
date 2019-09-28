@@ -15,6 +15,8 @@ public final class AvNElytra extends JavaPlugin {
 	private static FileConfiguration config;
 	
 	public static Logger log;
+	public static String errorPrefix = "§5[§dAvN Elytra§5]§7 ";
+	
 	public static Boolean elytraDisabled;
 	public static Boolean rocketBoostDisabled;
 	public static Boolean tridentBoostDisabled;
@@ -60,10 +62,13 @@ public final class AvNElytra extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new EventListener(this), this);
 		
 		// Register commands
-		getCommand("elytratoggle").setExecutor(new ElytraToggle());
-		getCommand("rocketboosttoggle").setExecutor(new RocketBoostToggle());
-		getCommand("tridentboosttoggle").setExecutor(new TridentBoostToggle());
-		getCommand("speedcap").setExecutor(new SpeedCap());
+		AvNElytraCommandExecutor executor = new AvNElytraCommandExecutor();
+		
+		getCommand("avnelytra").setExecutor(executor);
+		executor.registerSubCommand("elytratoggle", new ElytraToggle());
+		executor.registerSubCommand("rocketboosttoggle", new RocketBoostToggle());
+		executor.registerSubCommand("tridentboosttoggle", new TridentBoostToggle());
+		executor.registerSubCommand("speedcap", new SpeedCap("speedcap"));
 		
 		// Instantiate logger
 		log = getLogger();
