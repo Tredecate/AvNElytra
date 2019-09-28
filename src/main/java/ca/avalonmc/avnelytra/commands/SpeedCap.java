@@ -37,6 +37,13 @@ public class SpeedCap implements CommandExecutor {
 				
 			}
 			
+			try { Double.parseDouble(args[0]);} catch (NumberFormatException e) {
+				
+				sender.sendMessage(errorPrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
+				return false;
+				
+			}
+			
 			if (Double.parseDouble(args[0]) > 0) {
 				
 				maxSpeed = Double.parseDouble(args[0]);
