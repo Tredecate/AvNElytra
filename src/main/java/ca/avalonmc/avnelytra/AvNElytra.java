@@ -7,15 +7,19 @@ import ca.avalonmc.avnelytra.commands.TridentBoostToggle;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Logger;
 
 
 public final class AvNElytra extends JavaPlugin {
 	
 	private static FileConfiguration config;
-	
 	public static Logger log;
+	
 	public static String errorPrefix = "§5[§dAvN Elytra§5]§7 ";
+	public static ArrayList<String> off = new ArrayList<String>(Arrays.asList("off", "false", "disabled", "disable", "no"));
+	public static ArrayList<String> on = new ArrayList<String>(Arrays.asList("on", "true", "enabled", "enable", "yes"));
 	
 	public static Boolean elytraDisabled;
 	public static Boolean rocketBoostDisabled;
