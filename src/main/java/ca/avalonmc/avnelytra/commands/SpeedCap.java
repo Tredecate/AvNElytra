@@ -28,14 +28,11 @@ public class SpeedCap implements CommandExecutor {
 			
 			if (args.length < 1) {
 				
-				if (maxSpeed > 0) {
-					
-					sender.sendMessage(errorPrefix + "The current elytra speed cap is: §d" + maxSpeed + "§7, with an approximate ratio of §d1:" + (75 / scaleFactor) + "§7km/h.");
-					return true;
-					
-				}
-				
-				sender.sendMessage(errorPrefix + "The elytra speed cap is currently disabled.");
+				sender.sendMessage(errorPrefix + (
+						maxSpeed > 0 ?
+								"The current elytra speed cap is: §d" + maxSpeed + "§7, with an approximate ratio of §d1:" + (75 / scaleFactor) + "§7km/h." :
+								"The elytra speed cap is currently disabled."
+				));
 				return true;
 				
 			}
