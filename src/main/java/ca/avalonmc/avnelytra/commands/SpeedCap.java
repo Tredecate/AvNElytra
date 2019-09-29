@@ -4,24 +4,27 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static ca.avalonmc.avnelytra.AvNElytra.*;
 
 
 public class SpeedCap implements CommandExecutor {
 	
-	private String label;
+	private ArrayList<String> labels;
 	
 	
-	public SpeedCap (String label) {
+	public SpeedCap (String... labels) {
 		
-		this.label = label;
+		this.labels = new ArrayList<String>(Arrays.asList(labels));
 		
 	}
 	
 	
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
-		if (label.equalsIgnoreCase(this.label)) {
+		if (labels.contains(label.toLowerCase())) {
 			
 			if (args.length < 1) {
 				
