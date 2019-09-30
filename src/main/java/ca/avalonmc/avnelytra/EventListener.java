@@ -87,8 +87,13 @@ public class EventListener implements Listener {
 		
 		try {
 			chestplate = Objects.requireNonNull(Objects.requireNonNull(player.getEquipment()).getChestplate());
-		} catch (NullPointerException ex) {chestplate = new ItemStack(Material.AIR);}
-		try {interactItem = Objects.requireNonNull(e.getItem());} catch (NullPointerException ex) {
+		} catch (NullPointerException ex) {
+			chestplate = new ItemStack(Material.AIR);
+		}
+		
+		try {
+			interactItem = Objects.requireNonNull(e.getItem());
+		} catch (NullPointerException ex) {
 			interactItem = new ItemStack(Material.AIR);
 		}
 		
