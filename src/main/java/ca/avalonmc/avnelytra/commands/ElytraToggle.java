@@ -1,7 +1,7 @@
 package ca.avalonmc.avnelytra.commands;
 
+import ca.avalonmc.avnelytra.AvNElytraCommand;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -11,14 +11,12 @@ import static ca.avalonmc.avnelytra.AvNElytra.*;
 import static org.bukkit.Bukkit.getServer;
 
 
-public class ElytraToggle implements CommandExecutor {
-	
-	private ArrayList<String> labels;
+public class ElytraToggle extends AvNElytraCommand {
 	
 	
 	public ElytraToggle (ArrayList<String> labels) {
 		
-		this.labels = labels;
+		super(labels);
 		
 	}
 	

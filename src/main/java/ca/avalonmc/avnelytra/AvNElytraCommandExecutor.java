@@ -15,9 +15,13 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 	private HashMap<String, CommandExecutor> commands = new HashMap<>();
 	
 	
-	public void registerSubCommand (String label, CommandExecutor command) {
+	public void registerSubCommand (AvNElytraCommand command) {
 		
-		commands.put(label.toLowerCase(), command);
+		for (String label : command.getLabels()) {
+			
+			commands.put(label, command);
+			
+		}
 		
 	}
 	

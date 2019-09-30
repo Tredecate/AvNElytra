@@ -1,7 +1,7 @@
 package ca.avalonmc.avnelytra.commands;
 
+import ca.avalonmc.avnelytra.AvNElytraCommand;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
@@ -9,14 +9,12 @@ import java.util.ArrayList;
 import static ca.avalonmc.avnelytra.AvNElytra.*;
 
 
-public class TridentBoostToggle implements CommandExecutor {
-	
-	private ArrayList<String> labels;
+public class TridentBoostToggle extends AvNElytraCommand {
 	
 	
 	public TridentBoostToggle (ArrayList<String> labels) {
 		
-		this.labels = labels;
+		super(labels);
 		
 	}
 	
