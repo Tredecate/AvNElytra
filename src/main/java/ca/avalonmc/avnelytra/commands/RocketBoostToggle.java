@@ -29,9 +29,9 @@ public class RocketBoostToggle extends AvNElytraCommand {
 				
 			}
 			
-			if (on.contains(args[0].toLowerCase()) && rocketBoostDisabled) {
+			if (on.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + "You §denabled §7firework rocket boosting.");
+				sender.sendMessage(errorPrefix + (rocketBoostDisabled ? "You §denabled §7firework rocket boosting." : "Firework rocket boosting is already enabled."));
 				log.info(sender.getName() + " enabled firework rocket boosting.");
 				
 				rocketBoostDisabled = false;
@@ -39,9 +39,9 @@ public class RocketBoostToggle extends AvNElytraCommand {
 				
 			}
 			
-			if (off.contains(args[0].toLowerCase()) && !rocketBoostDisabled) {
+			if (off.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + "You §ddisabled §7firework rocket boosting.");
+				sender.sendMessage(errorPrefix + (!rocketBoostDisabled ? "You §ddisabled §7firework rocket boosting." : "Firework rocket boosting is already disabled."));
 				log.info(sender.getName() + " disabled firework rocket boosting.");
 				
 				rocketBoostDisabled = true;

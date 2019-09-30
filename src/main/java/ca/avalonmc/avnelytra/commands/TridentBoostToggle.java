@@ -29,9 +29,9 @@ public class TridentBoostToggle extends AvNElytraCommand {
 				
 			}
 			
-			if (on.contains(args[0].toLowerCase()) && tridentBoostDisabled) {
+			if (on.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + "You §denabled §7trident boosting.");
+				sender.sendMessage(errorPrefix + (tridentBoostDisabled ? "You §denabled §7trident boosting." : "Trident boosting is already enabled."));
 				log.info(sender.getName() + " enabled trident boosting.");
 				
 				tridentBoostDisabled = false;
@@ -39,9 +39,9 @@ public class TridentBoostToggle extends AvNElytraCommand {
 				
 			}
 			
-			if (off.contains(args[0].toLowerCase()) && !tridentBoostDisabled) {
+			if (off.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + "You §ddisabled §7trident boosting.");
+				sender.sendMessage(errorPrefix + (!tridentBoostDisabled ? "You §ddisabled §7trident boosting." : "Trident boosting is already disabled."));
 				log.info(sender.getName() + " disabled trident boosting.");
 				
 				tridentBoostDisabled = true;

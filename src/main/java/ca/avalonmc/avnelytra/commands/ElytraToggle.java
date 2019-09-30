@@ -31,9 +31,9 @@ public class ElytraToggle extends AvNElytraCommand {
 				
 			}
 			
-			if (on.contains(args[0].toLowerCase()) && !elytraDisabled) {
+			if (on.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + "You §denabled §7elytra flight.");
+				sender.sendMessage(errorPrefix + (elytraDisabled ? "You §denabled §7elytra flight." : "Elytra flight is already enabled."));
 				log.info(sender.getName() + " enabled elytra flight.");
 				
 				elytraDisabled = false;
@@ -41,9 +41,9 @@ public class ElytraToggle extends AvNElytraCommand {
 				
 			}
 			
-			if (off.contains(args[0].toLowerCase()) && !elytraDisabled) {
+			if (off.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + "You §ddisabled §7elytra flight.");
+				sender.sendMessage(errorPrefix + (!elytraDisabled ? "You §ddisabled §7elytra flight." : "Elytra flight is already disabled."));
 				log.info(sender.getName() + " disabled elytra flight.");
 				
 				for (Player p : getServer().getOnlinePlayers()) {
