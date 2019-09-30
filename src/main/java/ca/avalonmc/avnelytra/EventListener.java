@@ -22,6 +22,9 @@ public class EventListener implements Listener {
 	private AvNElytra plugin;
 	private HashMap<UUID, Integer> glidingPlayers = new HashMap<UUID, Integer>();
 	
+	private boolean rocketDenyMessage = false;
+	private boolean tridentDenyMessage = false;
+	
 	
 	EventListener (AvNElytra plugin) {
 		
@@ -99,17 +102,54 @@ public class EventListener implements Listener {
 		
 		if (rocketBoostDisabled && player.isGliding() && e.hasItem() && interactItem.getType().equals(Material.FIREWORK_ROCKET)) {
 			
-			player.sendMessage("§cYou are not allowed to use firework boosts!");
+			if (!rocketDenyMessage) {
+				
+				rocketDenyMessage = true;
+				denyMessageCooldown("rocket");
+				player.sendMessage("§cYou are not allowed to use firework boosts!");
+				
+			}
+			
 			e.setCancelled(true);
 			
 		}
 		
 		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT)) {
 			
-			player.sendMessage("§cYou are not allowed to use trident launching with elytra on!");
+			if (!tridentDenyMessage) {
+				
+				tridentDenyMessage = true;
+				denyMessageCooldown("trident");
+				player.sendMessage("§cYou are not allowed to use trident launching with elytra on!");
+				
+			}
+			
 			e.setCancelled(true);
 			
 		}
+		
+	}
+	
+	
+	private void denyMessageCooldown (String tridentOrRocket) {
+		
+		Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+			
+			@Override
+			public void run () {
+				
+				if (tridentOrRocket.equalsIgnoreCase("trident")) {
+					
+					tridentDenyMessage = false;
+					return;
+					
+				}
+				
+				rocketDenyMessage = false;
+				
+			}
+			
+		}, 30l);
 		
 	}
 
