@@ -112,9 +112,9 @@ public final class AvNElytra extends JavaPlugin {
 	private void saveVariables () {
 		
 		config.set("Elytra.Disabled", elytraDisabled);
-		config.set("Boosts.RocketBoostDisabled", rocketBoostDisabled);
-		config.set("Boosts.TridentBoostDisabled", tridentBoostDisabled);
-		config.set("Elytra.MaxSpeed", maxSpeed);
+		config.set("RocketBoost.Disabled", rocketBoostDisabled);
+		config.set("TridentBoost.Disabled", tridentBoostDisabled);
+		config.set("SpeedLimit.MaxSpeed", maxSpeed);
 		
 	}
 	
