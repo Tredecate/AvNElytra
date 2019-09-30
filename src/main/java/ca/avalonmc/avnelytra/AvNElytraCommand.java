@@ -1,8 +1,11 @@
 package ca.avalonmc.avnelytra;
 
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
+
+import static ca.avalonmc.avnelytra.AvNElytra.messagePrefix;
 
 
 public abstract class AvNElytraCommand implements CommandExecutor {
@@ -20,6 +23,13 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 	public ArrayList<String> getLabels () {
 		
 		return labels;
+		
+	}
+	
+	
+	protected void printHelp (CommandSender sender) {
+		
+		sender.sendMessage(messagePrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
 		
 	}
 	

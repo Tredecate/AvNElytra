@@ -57,7 +57,7 @@ public class ElytraToggle extends AvNElytraCommand {
 				
 			}
 			
-			sender.sendMessage(messagePrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
+			printHelp(sender);
 			return false;
 			
 		}
