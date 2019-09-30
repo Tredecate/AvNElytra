@@ -7,9 +7,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.UUID;
 
 import static ca.avalonmc.avnelytra.AvNElytra.*;
@@ -80,8 +82,17 @@ public class EventListener implements Listener {
 	public void onBoost (PlayerInteractEvent e) {
 		
 		Player player = e.getPlayer();
+		ItemStack chestplate;
+		ItemStack interactItem;
 		
-		if (rocketBoostDisabled && player.isGliding() && e.hasItem() && e.getItem().getType().equals(Material.FIREWORK_ROCKET)) {
+		try {
+			chestplate = Objects.requireNonNull(Objects.requireNonNull(player.getEquipment()).getChestplate());
+		} catch (NullPointerException ex) {chestplate = new ItemStack(Material.AIR);}
+		try {interactItem = Objects.requireNonNull(e.getItem());} catch (NullPointerException ex) {
+			interactItem = new ItemStack(Material.AIR);
+		}
+		
+		if (rocketBoostDisabled && player.isGliding() && e.hasItem() && interactItem.getType().equals(Material.FIREWORK_ROCKET)) {
 			
 			player.sendMessage("§cYou are not allowed to use firework boosts!");
 			e.setCancelled(true);
