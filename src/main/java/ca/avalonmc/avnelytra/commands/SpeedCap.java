@@ -5,7 +5,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static ca.avalonmc.avnelytra.AvNElytra.*;
 
@@ -15,9 +14,9 @@ public class SpeedCap implements CommandExecutor {
 	private ArrayList<String> labels;
 	
 	
-	public SpeedCap (String... labels) {
+	public SpeedCap (ArrayList<String> labels) {
 		
-		this.labels = new ArrayList<String>(Arrays.asList(labels));
+		this.labels = labels;
 		
 	}
 	

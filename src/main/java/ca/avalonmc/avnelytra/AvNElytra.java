@@ -22,10 +22,17 @@ public final class AvNElytra extends JavaPlugin {
 	public static ArrayList<String> on = new ArrayList<String>(Arrays.asList("on", "true", "enabled", "enable", "yes"));
 	
 	public static Boolean elytraDisabled;
+	private static ArrayList<String> elytraAliases;
+	
 	public static Boolean rocketBoostDisabled;
+	private static ArrayList<String> rocketBoostAliases;
+	
 	public static Boolean tridentBoostDisabled;
+	private static ArrayList<String> tridentBoostAliases;
+	
 	public static double maxSpeed;
 	public static double scaleFactor;
+	private static ArrayList<String> speedCapAliases;
 	
 	
 	@Override
@@ -66,13 +73,14 @@ public final class AvNElytra extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new EventListener(this), this);
 		
 		// Register commands
+		getAliasesFromConfig();
 		AvNElytraCommandExecutor executor = new AvNElytraCommandExecutor();
-		
 		getCommand("avnelytra").setExecutor(executor);
-		executor.registerSubCommand("elytratoggle", new ElytraToggle());
-		executor.registerSubCommand("rocketboosttoggle", new RocketBoostToggle());
-		executor.registerSubCommand("tridentboosttoggle", new TridentBoostToggle());
-		executor.registerSubCommand("speedcap", new SpeedCap("speedcap"));
+		
+		executor.registerSubCommand(new ElytraToggle(elytraAliases));
+		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases));
+		executor.registerSubCommand(new TridentBoostToggle(tridentBoostAliases));
+		executor.registerSubCommand(new SpeedCap(speedCapAliases));
 		
 		// Instantiate logger
 		log = getLogger();
@@ -83,10 +91,20 @@ public final class AvNElytra extends JavaPlugin {
 	private void instantiateVariables () {
 		
 		elytraDisabled = Boolean.valueOf(getConfigFromKey("Elytra.Disabled"));
-		rocketBoostDisabled = Boolean.valueOf(getConfigFromKey("Boosts.RocketBoostDisabled"));
-		tridentBoostDisabled = Boolean.valueOf(getConfigFromKey("Boosts.TridentBoostDisabled"));
-		maxSpeed = Double.parseDouble(getConfigFromKey("Elytra.MaxSpeed"));
-		scaleFactor = 75 / Double.parseDouble(getConfigFromKey("Elytra.SpeedScale"));
+		rocketBoostDisabled = Boolean.valueOf(getConfigFromKey("RocketBoost.Disabled"));
+		tridentBoostDisabled = Boolean.valueOf(getConfigFromKey("TridentBoost.Disabled"));
+		maxSpeed = Double.parseDouble(getConfigFromKey("SpeedLimit.MaxSpeed"));
+		scaleFactor = 75 / Double.parseDouble(getConfigFromKey("SpeedLimit.Scale"));
+		
+	}
+	
+	
+	private void getAliasesFromConfig () {
+		
+		elytraAliases = new ArrayList<>(config.getStringList("Elytra.Aliases"));
+		rocketBoostAliases = new ArrayList<>(config.getStringList("RocketBoost.Aliases"));
+		tridentBoostAliases = new ArrayList<>(config.getStringList("TridentBoost.Aliases"));
+		speedCapAliases = new ArrayList<>(config.getStringList("SpeedLimit.Aliases"));
 		
 	}
 	

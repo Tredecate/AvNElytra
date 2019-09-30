@@ -6,7 +6,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static ca.avalonmc.avnelytra.AvNElytra.*;
 import static org.bukkit.Bukkit.getServer;
@@ -17,9 +16,9 @@ public class ElytraToggle implements CommandExecutor {
 	private ArrayList<String> labels;
 	
 	
-	public ElytraToggle (String... labels) {
+	public ElytraToggle (ArrayList<String> labels) {
 		
-		this.labels = new ArrayList<String>(Arrays.asList(labels));
+		this.labels = labels;
 		
 	}
 	
