@@ -99,9 +99,9 @@ public class EventListener implements Listener {
 			
 		}
 		
-		if (tridentBoostDisabled && player.isGliding() && e.hasItem() && e.getItem().getType().equals(Material.TRIDENT)) {
+		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT)) {
 			
-			player.sendMessage("§cYou are not allowed to use riptide boosts!");
+			player.sendMessage("§cYou are not allowed to use trident launching with elytra on!");
 			e.setCancelled(true);
 			
 		}
