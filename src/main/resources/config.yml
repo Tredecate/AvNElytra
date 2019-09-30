@@ -4,13 +4,13 @@
 
 Elytra:
   Disabled: false
-  Aliases: ["elytratoggle", "toggle", "elytra"]
+  Aliases: ["elytratoggle", "toggle", "elytra", "e", "el"]
 RocketBoost:
   Disabled: false
-  Aliases: ["fireworkboosttoggle", "rocketboosttoggle", "fireworktoggle", "rockettoggle", "firework", "rocket"]
+  Aliases: ["fireworkboosttoggle", "rocketboosttoggle", "fireworktoggle", "rockettoggle", "firework", "rocket", "f", "r", "fw"]
 TridentBoost:
   Disabled: false
-  Aliases: ["tridentboosttoggle", "tridenttoggle", "trident"]
+  Aliases: ["tridentboosttoggle", "tridenttoggle", "trident", "t", "tr"]
 SpeedLimit:
   MaxSpeed: 0
   Scale: 10

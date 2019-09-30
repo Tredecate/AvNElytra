@@ -18,8 +18,8 @@ public final class AvNElytra extends JavaPlugin {
 	public static Logger log;
 	
 	public static String messagePrefix = "§5[§dAvN Elytra§5]§7 ";
-	public static ArrayList<String> off = new ArrayList<String>(Arrays.asList("off", "false", "disabled", "disable", "no"));
-	public static ArrayList<String> on = new ArrayList<String>(Arrays.asList("on", "true", "enabled", "enable", "yes"));
+	public static ArrayList<String> off = new ArrayList<String>(Arrays.asList("off", "false", "disabled", "disable", "no", "n", "0"));
+	public static ArrayList<String> on = new ArrayList<String>(Arrays.asList("on", "true", "enabled", "enable", "yes", "y", "1"));
 	
 	public static Boolean elytraDisabled;
 	private static ArrayList<String> elytraAliases;
