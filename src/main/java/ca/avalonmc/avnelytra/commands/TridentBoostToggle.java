@@ -24,14 +24,14 @@ public class TridentBoostToggle extends AvNElytraCommand {
 			
 			if (args.length < 1) {
 				
-				sender.sendMessage(errorPrefix + "Trident boosting is currently §d" + (tridentBoostDisabled ? "disabled" : "enabled") + "§7.");
+				sender.sendMessage(messagePrefix + "Trident boosting is currently §d" + (tridentBoostDisabled ? "disabled" : "enabled") + "§7.");
 				return true;
 				
 			}
 			
 			if (on.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + (tridentBoostDisabled ? "You §denabled §7trident boosting." : "Trident boosting is already enabled."));
+				sender.sendMessage(messagePrefix + (tridentBoostDisabled ? "You §denabled §7trident boosting." : "Trident boosting is already enabled."));
 				log.info(sender.getName() + " enabled trident boosting.");
 				
 				tridentBoostDisabled = false;
@@ -41,7 +41,7 @@ public class TridentBoostToggle extends AvNElytraCommand {
 			
 			if (off.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + (!tridentBoostDisabled ? "You §ddisabled §7trident boosting." : "Trident boosting is already disabled."));
+				sender.sendMessage(messagePrefix + (!tridentBoostDisabled ? "You §ddisabled §7trident boosting." : "Trident boosting is already disabled."));
 				log.info(sender.getName() + " disabled trident boosting.");
 				
 				tridentBoostDisabled = true;
@@ -49,7 +49,7 @@ public class TridentBoostToggle extends AvNElytraCommand {
 				
 			}
 			
-			sender.sendMessage(errorPrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
+			sender.sendMessage(messagePrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
 			return false;
 			
 		}

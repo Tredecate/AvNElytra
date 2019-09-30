@@ -26,14 +26,14 @@ public class ElytraToggle extends AvNElytraCommand {
 			
 			if (args.length < 1) {
 				
-				sender.sendMessage(errorPrefix + "Elytra flight is currently §d" + (elytraDisabled ? "disabled" : "enabled") + "§7.");
+				sender.sendMessage(messagePrefix + "Elytra flight is currently §d" + (elytraDisabled ? "disabled" : "enabled") + "§7.");
 				return true;
 				
 			}
 			
 			if (on.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + (elytraDisabled ? "You §denabled §7elytra flight." : "Elytra flight is already enabled."));
+				sender.sendMessage(messagePrefix + (elytraDisabled ? "You §denabled §7elytra flight." : "Elytra flight is already enabled."));
 				log.info(sender.getName() + " enabled elytra flight.");
 				
 				elytraDisabled = false;
@@ -43,7 +43,7 @@ public class ElytraToggle extends AvNElytraCommand {
 			
 			if (off.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + (!elytraDisabled ? "You §ddisabled §7elytra flight." : "Elytra flight is already disabled."));
+				sender.sendMessage(messagePrefix + (!elytraDisabled ? "You §ddisabled §7elytra flight." : "Elytra flight is already disabled."));
 				log.info(sender.getName() + " disabled elytra flight.");
 				
 				for (Player p : getServer().getOnlinePlayers()) {
@@ -57,7 +57,7 @@ public class ElytraToggle extends AvNElytraCommand {
 				
 			}
 			
-			sender.sendMessage(errorPrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
+			sender.sendMessage(messagePrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
 			return false;
 			
 		}

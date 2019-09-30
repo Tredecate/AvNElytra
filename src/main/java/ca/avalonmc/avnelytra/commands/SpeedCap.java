@@ -25,7 +25,7 @@ public class SpeedCap extends AvNElytraCommand {
 			
 			if (args.length < 1) {
 				
-				sender.sendMessage(errorPrefix + (
+				sender.sendMessage(messagePrefix + (
 						maxSpeed > 0 ?
 								"The current elytra speed cap is: §d" + maxSpeed + "§7, with an approximate ratio of §d1:" + (75 / scaleFactor) + "§7km/h." :
 								"The elytra speed cap is currently disabled."
@@ -36,7 +36,7 @@ public class SpeedCap extends AvNElytraCommand {
 			
 			try { Double.parseDouble(args[0]); } catch (NumberFormatException e) {
 				
-				sender.sendMessage(errorPrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
+				sender.sendMessage(messagePrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
 				return false;
 				
 			}
@@ -45,7 +45,7 @@ public class SpeedCap extends AvNElytraCommand {
 				
 				maxSpeed = Double.parseDouble(args[0]);
 				
-				sender.sendMessage(errorPrefix + "You set the elytra speed cap to: §d" + maxSpeed + "§7.");
+				sender.sendMessage(messagePrefix + "You set the elytra speed cap to: §d" + maxSpeed + "§7.");
 				log.info(sender.getName() + " set the elytra speed cap to: " + maxSpeed + ".");
 				
 				return true;
@@ -54,7 +54,7 @@ public class SpeedCap extends AvNElytraCommand {
 			
 			maxSpeed = 0;
 			
-			sender.sendMessage(errorPrefix + "You disabled the elytra speed cap.");
+			sender.sendMessage(messagePrefix + "You disabled the elytra speed cap.");
 			log.info(sender.getName() + " disabled the elytra speed cap.");
 			
 			return true;

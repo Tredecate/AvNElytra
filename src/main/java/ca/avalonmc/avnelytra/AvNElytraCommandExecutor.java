@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import static ca.avalonmc.avnelytra.AvNElytra.errorPrefix;
+import static ca.avalonmc.avnelytra.AvNElytra.messagePrefix;
 
 
 public class AvNElytraCommandExecutor implements CommandExecutor {
@@ -49,17 +49,17 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 					
 				}
 				
-				sender.sendMessage(errorPrefix + "Invalid subcommand.");
+				sender.sendMessage(messagePrefix + "Invalid subcommand.");
 				return false;
 				
 			}
 			
-			sender.sendMessage(errorPrefix + "Use §d/avnelytra help§7 to list available commands.");
+			sender.sendMessage(messagePrefix + "Use §d/avnelytra help§7 to list available commands.");
 			return false;
 			
 		}
 		
-		sender.sendMessage(errorPrefix + "Insufficient permission.");
+		sender.sendMessage(messagePrefix + "Insufficient permission.");
 		return false;
 		
 	}

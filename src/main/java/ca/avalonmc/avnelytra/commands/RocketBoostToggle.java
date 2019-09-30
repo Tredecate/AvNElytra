@@ -24,14 +24,14 @@ public class RocketBoostToggle extends AvNElytraCommand {
 			
 			if (args.length < 1) {
 				
-				sender.sendMessage(errorPrefix + "Firework rocket boosting is currently §d" + (rocketBoostDisabled ? "disabled" : "enabled") + "§7.");
+				sender.sendMessage(messagePrefix + "Firework rocket boosting is currently §d" + (rocketBoostDisabled ? "disabled" : "enabled") + "§7.");
 				return true;
 				
 			}
 			
 			if (on.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + (rocketBoostDisabled ? "You §denabled §7firework rocket boosting." : "Firework rocket boosting is already enabled."));
+				sender.sendMessage(messagePrefix + (rocketBoostDisabled ? "You §denabled §7firework rocket boosting." : "Firework rocket boosting is already enabled."));
 				log.info(sender.getName() + " enabled firework rocket boosting.");
 				
 				rocketBoostDisabled = false;
@@ -41,7 +41,7 @@ public class RocketBoostToggle extends AvNElytraCommand {
 			
 			if (off.contains(args[0].toLowerCase())) {
 				
-				sender.sendMessage(errorPrefix + (!rocketBoostDisabled ? "You §ddisabled §7firework rocket boosting." : "Firework rocket boosting is already disabled."));
+				sender.sendMessage(messagePrefix + (!rocketBoostDisabled ? "You §ddisabled §7firework rocket boosting." : "Firework rocket boosting is already disabled."));
 				log.info(sender.getName() + " disabled firework rocket boosting.");
 				
 				rocketBoostDisabled = true;
@@ -49,7 +49,7 @@ public class RocketBoostToggle extends AvNElytraCommand {
 				
 			}
 			
-			sender.sendMessage(errorPrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
+			sender.sendMessage(messagePrefix + "Incorrect usage. Please refer to §d/avnelytra help§7.");
 			return false;
 			
 		}
