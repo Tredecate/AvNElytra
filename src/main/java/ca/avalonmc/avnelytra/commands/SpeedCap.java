@@ -21,47 +21,41 @@ public class SpeedCap extends AvNElytraCommand {
 	
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
-		if (labels.contains(label.toLowerCase())) {
+		if (args.length < 1) {
 			
-			if (args.length < 1) {
-				
-				sender.sendMessage(messagePrefix + (
-						maxSpeed > 0 ?
-								"The current elytra speed cap is: §d" + maxSpeed + "§7, with an approximate ratio of §d1:" + (75 / scaleFactor) + "§7km/h." :
-								"The elytra speed cap is currently disabled."
-				));
-				return true;
-				
-			}
+			sender.sendMessage(messagePrefix + (
+					maxSpeed > 0 ?
+							"The current elytra speed cap is: §d" + maxSpeed + "§7, with an approximate ratio of §d1:" + (75 / scaleFactor) + "§7km/h." :
+							"The elytra speed cap is currently disabled."
+			));
+			return true;
 			
-			try { Double.parseDouble(args[0]); } catch (NumberFormatException e) {
-				
-				printHelp(sender);
-				return false;
-				
-			}
+		}
+		
+		try { Double.parseDouble(args[0]); } catch (NumberFormatException e) {
 			
-			if (Double.parseDouble(args[0]) > 0) {
-				
-				maxSpeed = Double.parseDouble(args[0]);
-				
-				sender.sendMessage(messagePrefix + "You set the elytra speed cap to: §d" + maxSpeed + "§7.");
-				log.info(sender.getName() + " set the elytra speed cap to: " + maxSpeed + ".");
-				
-				return true;
-				
-			}
+			printHelp(sender);
+			return false;
 			
-			maxSpeed = 0;
+		}
+		
+		if (Double.parseDouble(args[0]) > 0) {
 			
-			sender.sendMessage(messagePrefix + "You disabled the elytra speed cap.");
-			log.info(sender.getName() + " disabled the elytra speed cap.");
+			maxSpeed = Double.parseDouble(args[0]);
+			
+			sender.sendMessage(messagePrefix + "You set the elytra speed cap to: §d" + maxSpeed + "§7.");
+			log.info(sender.getName() + " set the elytra speed cap to: " + maxSpeed + ".");
 			
 			return true;
 			
 		}
 		
-		return false; // COMMAND FAILED
+		maxSpeed = 0;
+		
+		sender.sendMessage(messagePrefix + "You disabled the elytra speed cap.");
+		log.info(sender.getName() + " disabled the elytra speed cap.");
+		
+		return true;
 		
 	}
 	
