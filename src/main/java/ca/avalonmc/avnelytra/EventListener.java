@@ -2,6 +2,7 @@ package ca.avalonmc.avnelytra;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -114,7 +115,7 @@ public class EventListener implements Listener {
 			
 		}
 		
-		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT)) {
+		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT) && interactItem.containsEnchantment(Enchantment.RIPTIDE)) {
 			
 			if (!tridentDenyMessage) {
 				
