@@ -11,9 +11,9 @@ import static ca.avalonmc.avnelytra.AvNElytra.*;
 public class SpeedCap extends AvNElytraCommand {
 	
 	
-	public SpeedCap (ArrayList<String> labels) {
+	public SpeedCap (ArrayList<String> labels, String... args) {
 		
-		super(labels);
+		super(labels, args);
 		
 	}
 	

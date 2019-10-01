@@ -4,6 +4,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static ca.avalonmc.avnelytra.AvNElytra.messagePrefix;
 
@@ -11,11 +12,13 @@ import static ca.avalonmc.avnelytra.AvNElytra.messagePrefix;
 public abstract class AvNElytraCommand implements CommandExecutor {
 	
 	protected ArrayList<String> labels;
+	protected ArrayList<String> arguments;
 	
 	
-	public AvNElytraCommand (ArrayList<String> labels) {
+	public AvNElytraCommand (ArrayList<String> labels, String... arguments) {
 		
 		this.labels = labels;
+		this.arguments.addAll(Arrays.asList(arguments));
 		
 	}
 	
@@ -23,6 +26,13 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 	public ArrayList<String> getLabels () {
 		
 		return labels;
+		
+	}
+	
+	
+	public ArrayList<String> getArguments () {
+		
+		return arguments;
 		
 	}
 	

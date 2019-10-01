@@ -11,9 +11,9 @@ import static ca.avalonmc.avnelytra.AvNElytra.*;
 public class TridentBoostToggle extends AvNElytraCommand {
 	
 	
-	public TridentBoostToggle (ArrayList<String> labels) {
+	public TridentBoostToggle (ArrayList<String> labels, String... args) {
 		
-		super(labels);
+		super(labels, args);
 		
 	}
 	
