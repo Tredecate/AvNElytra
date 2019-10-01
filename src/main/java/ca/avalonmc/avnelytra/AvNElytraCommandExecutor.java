@@ -5,8 +5,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 
 import static ca.avalonmc.avnelytra.AvNElytra.messagePrefix;
 
@@ -27,9 +29,10 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 	}
 	
 	
-	public static HashMap<String, AvNElytraCommand> getCommands () {
+	public static ArrayList<AvNElytraCommand> getCommands () {
 		
-		return commands;
+		LinkedHashSet<AvNElytraCommand> commandList = new LinkedHashSet<>(commands.values());
+		return new ArrayList<AvNElytraCommand>(commandList);
 		
 	}
 	
