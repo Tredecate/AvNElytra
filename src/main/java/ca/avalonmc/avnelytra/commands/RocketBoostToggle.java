@@ -11,9 +11,9 @@ import static ca.avalonmc.avnelytra.AvNElytra.*;
 public class RocketBoostToggle extends AvNElytraCommand {
 	
 	
-	public RocketBoostToggle (ArrayList<String> labels, String usage, String... args) {
+	public RocketBoostToggle (ArrayList<String> labels, String usage, boolean showInHelp, String... args) {
 		
-		super(labels, usage, args);
+		super(labels, usage, showInHelp, args);
 		
 	}
 	

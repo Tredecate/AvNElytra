@@ -1,9 +1,6 @@
 package ca.avalonmc.avnelytra;
 
-import ca.avalonmc.avnelytra.commands.ElytraToggle;
-import ca.avalonmc.avnelytra.commands.RocketBoostToggle;
-import ca.avalonmc.avnelytra.commands.SpeedCap;
-import ca.avalonmc.avnelytra.commands.TridentBoostToggle;
+import ca.avalonmc.avnelytra.commands.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -78,10 +75,11 @@ public final class AvNElytra extends JavaPlugin {
 		getCommand("avnelytra").setExecutor(executor);
 		getCommand("avnelytra").setTabCompleter(new AvNElytraTabCompleter());
 		
-		executor.registerSubCommand(new ElytraToggle(elytraAliases, "Used to toggle elytra flight on and off.", "[on/off]"));
-		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases, "Used to toggle firework boosting (while gliding) on and off.", "[on/off]"));
-		executor.registerSubCommand(new TridentBoostToggle(tridentBoostAliases, "Used to toggle trident boosting (via riptide, with an elytra equipped) on and off.", "[on/off]"));
-		executor.registerSubCommand(new SpeedCap(speedCapAliases, "Used to set a maximum speed limit for elytra flight.", "[speed]"));
+		executor.registerSubCommand(new ElytraToggle(elytraAliases, "Toggles elytra flight on and off.", true, "[on/off]"));
+		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases, "Toggle firework boosting on and off.", true, "[on/off]"));
+		executor.registerSubCommand(new TridentBoostToggle(tridentBoostAliases, "Toggles trident/riptide boosting on and off.", true, "[on/off]"));
+		executor.registerSubCommand(new SpeedCap(speedCapAliases, "Sets a maximum speed limit for elytra flight.", true, "[speed]"));
+		executor.registerSubCommand(new Help(helpAliases, "Displays this help message.", false));
 		
 		// Instantiate logger
 		log = getLogger();

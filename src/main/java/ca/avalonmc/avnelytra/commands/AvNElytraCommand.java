@@ -14,12 +14,14 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 	protected ArrayList<String> labels;
 	protected ArrayList<String> arguments;
 	protected String usage;
+	protected boolean showInHelp;
 	
 	
-	public AvNElytraCommand (ArrayList<String> labels, String usage, String... arguments) {
+	public AvNElytraCommand (ArrayList<String> labels, String usage, boolean showInHelp, String... arguments) {
 		
 		this.labels = labels;
 		this.usage = usage;
+		this.showInHelp = showInHelp;
 		this.arguments = new ArrayList<String>(Arrays.asList(arguments));
 		
 	}
