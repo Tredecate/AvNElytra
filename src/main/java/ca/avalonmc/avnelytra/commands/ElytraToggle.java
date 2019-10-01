@@ -20,6 +20,7 @@ public class ElytraToggle extends AvNElytraCommand {
 		
 	}
 	
+	
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
 		if (labels.contains(label.toLowerCase())) {
