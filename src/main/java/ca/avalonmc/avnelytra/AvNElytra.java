@@ -125,4 +125,11 @@ public final class AvNElytra extends JavaPlugin {
 		
 	}
 	
+	
+	public static ArrayList<ArrayList<String>> getAliases () {
+		
+		return new ArrayList<ArrayList<String>>(Arrays.asList(elytraAliases, rocketBoostAliases, tridentBoostAliases, speedCapAliases));
+		
+	}
+	
 }
