@@ -76,6 +76,7 @@ public final class AvNElytra extends JavaPlugin {
 		getAliasesFromConfig();
 		AvNElytraCommandExecutor executor = new AvNElytraCommandExecutor();
 		getCommand("avnelytra").setExecutor(executor);
+		getCommand("avnelytra").setTabCompleter(new AvNElytraTabCompleter());
 		
 		executor.registerSubCommand(new ElytraToggle(elytraAliases));
 		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases));
