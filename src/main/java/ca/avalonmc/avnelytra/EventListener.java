@@ -2,6 +2,7 @@ package ca.avalonmc.avnelytra;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.block.Biome;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -115,7 +116,7 @@ public class EventListener implements Listener {
 			
 		}
 		
-		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT) && interactItem.containsEnchantment(Enchantment.RIPTIDE)) {
+		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT) && interactItem.containsEnchantment(Enchantment.RIPTIDE) && playerCanRiptide(player)) {
 			
 			if (!tridentDenyMessage) {
 				
@@ -150,7 +151,36 @@ public class EventListener implements Listener {
 				
 			}
 			
-		}, 30l);
+		}, 30L);
+		
+	}
+	
+	
+	private boolean playerCanRiptide (Player player) {
+		
+		Biome playerBiome = player.getWorld().getBiome(player.getLocation().getBlockX(), player.getLocation().getBlockZ());
+		
+		return (player.isSwimming() || player.getLocation().getBlock().getType().equals(Material.WATER)) || (player.getWorld().hasStorm() && !multiLowerCaseContains(playerBiome.toString(), "badlands", "plateau", "desert", "savanna", "end"));
+		
+	}
+	
+	
+	private boolean multiLowerCaseContains (String containingString, String... strings) {
+		
+		boolean contains = false;
+		
+		for (String s : strings) {
+			
+			if (containingString.toLowerCase().contains(s.toLowerCase())) {
+				
+				contains = true;
+				break;
+				
+			}
+			
+		}
+		
+		return contains;
 		
 	}
 
