@@ -13,11 +13,13 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 	
 	protected ArrayList<String> labels;
 	protected ArrayList<String> arguments;
+	protected String usage;
 	
 	
-	public AvNElytraCommand (ArrayList<String> labels, String... arguments) {
+	public AvNElytraCommand (ArrayList<String> labels, String usage, String... arguments) {
 		
 		this.labels = labels;
+		this.usage = usage;
 		this.arguments.addAll(Arrays.asList(arguments));
 		
 	}
@@ -26,6 +28,13 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 	public ArrayList<String> getLabels () {
 		
 		return labels;
+		
+	}
+	
+	
+	public String getUsage () {
+		
+		return usage;
 		
 	}
 	

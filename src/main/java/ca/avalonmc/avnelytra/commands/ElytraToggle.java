@@ -13,9 +13,9 @@ import static org.bukkit.Bukkit.getServer;
 public class ElytraToggle extends AvNElytraCommand {
 	
 	
-	public ElytraToggle (ArrayList<String> labels, String... args) {
+	public ElytraToggle (ArrayList<String> labels, String usage, String... args) {
 		
-		super(labels, args);
+		super(labels, usage, args);
 		
 	}
 	

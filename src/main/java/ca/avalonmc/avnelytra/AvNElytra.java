@@ -78,10 +78,10 @@ public final class AvNElytra extends JavaPlugin {
 		getCommand("avnelytra").setExecutor(executor);
 		getCommand("avnelytra").setTabCompleter(new AvNElytraTabCompleter());
 		
-		executor.registerSubCommand(new ElytraToggle(elytraAliases, "on/off"));
-		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases, "on/off"));
-		executor.registerSubCommand(new TridentBoostToggle(tridentBoostAliases, "on/off"));
-		executor.registerSubCommand(new SpeedCap(speedCapAliases, "speed"));
+		executor.registerSubCommand(new ElytraToggle(elytraAliases, "Used to toggle elytra flight on and off.", "[on/off]"));
+		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases, "Used to toggle firework boosting (while gliding) on and off.", "[on/off]"));
+		executor.registerSubCommand(new TridentBoostToggle(tridentBoostAliases, "Used to toggle trident boosting (via riptide, with an elytra equipped) on and off.", "[on/off]"));
+		executor.registerSubCommand(new SpeedCap(speedCapAliases, "Used to set a maximum speed limit for elytra flight.", "[speed]"));
 		
 		// Instantiate logger
 		log = getLogger();
