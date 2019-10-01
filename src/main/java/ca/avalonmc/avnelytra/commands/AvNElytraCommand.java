@@ -20,7 +20,7 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 		
 		this.labels = labels;
 		this.usage = usage;
-		this.arguments.addAll(Arrays.asList(arguments));
+		this.arguments = new ArrayList<String>(Arrays.asList(arguments));
 		
 	}
 	
