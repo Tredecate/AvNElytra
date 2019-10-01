@@ -78,8 +78,8 @@ public final class AvNElytra extends JavaPlugin {
 		executor.registerSubCommand(new ElytraToggle(elytraAliases, "Toggles elytra flight on and off.", true, "[on/off]"));
 		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases, "Toggle firework boosting on and off.", true, "[on/off]"));
 		executor.registerSubCommand(new TridentBoostToggle(tridentBoostAliases, "Toggles trident/riptide boosting on and off.", true, "[on/off]"));
-		executor.registerSubCommand(new SpeedCap(speedCapAliases, "Sets a maximum speed limit for elytra flight.", true, "[speed]"));
-		executor.registerSubCommand(new Help(helpAliases, "Displays this help message.", false));
+		executor.registerSubCommand(new SpeedCap(speedCapAliases, "Sets the maximum speed limit for elytra flight.", true, "[speed]"));
+		executor.registerSubCommand(new Help(helpAliases, "Displays the help message.", false));
 		
 		// Instantiate logger
 		log = getLogger();
