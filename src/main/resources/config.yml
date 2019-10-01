@@ -14,4 +14,4 @@ TridentBoost:
 SpeedLimit:
   MaxSpeed: 0
   Scale: 10
-  Aliases: ["speedcap", "speedlimit", "maxspeed", "speed", "zoomywoomybiggestspeedy"]
+  Aliases: ["velocitycap", "velcap", "velocitylimit", "vellimit", "velocity", "vel", "maxvelocity", "maxvel", "speedcap", "speedlimit", "maxspeed", "speed", "zoomywoomybiggestspeedy"]
