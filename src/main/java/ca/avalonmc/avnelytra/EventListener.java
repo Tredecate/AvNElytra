@@ -116,7 +116,7 @@ public class EventListener implements Listener {
 			
 		}
 		
-		if (tridentBoostDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT) && interactItem.containsEnchantment(Enchantment.RIPTIDE) && playerCanRiptide(player)) {
+		if (tridentBoostDisabled && !elytraDisabled && chestplate.getType().equals(Material.ELYTRA) && e.hasItem() && interactItem.getType().equals(Material.TRIDENT) && interactItem.containsEnchantment(Enchantment.RIPTIDE) && playerCanRiptide(player)) {
 			
 			if (!tridentDenyMessage) {
 				
