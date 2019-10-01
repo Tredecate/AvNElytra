@@ -31,7 +31,14 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 	
 	public static ArrayList<AvNElytraCommand> getCommands () {
 		
-		LinkedHashSet<AvNElytraCommand> commandList = new LinkedHashSet<>(commands.values());
+		LinkedHashSet<AvNElytraCommand> commandList = new LinkedHashSet<>();
+		
+		for (AvNElytraCommand comm : commands.values()) {
+			
+			commandList.add(comm);
+			
+		}
+		
 		return new ArrayList<AvNElytraCommand>(commandList);
 		
 	}
