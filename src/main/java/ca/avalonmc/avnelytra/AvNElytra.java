@@ -32,6 +32,8 @@ public final class AvNElytra extends JavaPlugin {
 	public static double scaleFactor;
 	private static ArrayList<String> speedCapAliases;
 	
+	private static ArrayList<String> helpAliases;
+	
 	
 	@Override
 	public void onEnable () {  //ON PLUGIN ENABLE
@@ -105,6 +107,7 @@ public final class AvNElytra extends JavaPlugin {
 		rocketBoostAliases = new ArrayList<>(config.getStringList("RocketBoost.Aliases"));
 		tridentBoostAliases = new ArrayList<>(config.getStringList("TridentBoost.Aliases"));
 		speedCapAliases = new ArrayList<>(config.getStringList("SpeedLimit.Aliases"));
+		helpAliases = new ArrayList<>(config.getStringList("Help.Aliases"));
 		
 	}
 	
@@ -128,7 +131,7 @@ public final class AvNElytra extends JavaPlugin {
 	
 	public static ArrayList<ArrayList<String>> getAliases () {
 		
-		return new ArrayList<ArrayList<String>>(Arrays.asList(elytraAliases, rocketBoostAliases, tridentBoostAliases, speedCapAliases));
+		return new ArrayList<ArrayList<String>>(Arrays.asList(elytraAliases, rocketBoostAliases, tridentBoostAliases, speedCapAliases, helpAliases));
 		
 	}
 	
