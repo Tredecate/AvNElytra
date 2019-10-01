@@ -54,7 +54,7 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 				
 			}
 			
-			sender.sendMessage(messagePrefix + "Use §d/avnelytra help§7 to list available commands.");
+			sender.sendMessage(messagePrefix + "Incorrect use. Please refer to §d/avnelytra ?§7.");
 			return false;
 			
 		}

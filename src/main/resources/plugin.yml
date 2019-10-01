@@ -3,11 +3,11 @@ version: ${project.version}
 main: ca.avalonmc.avnelytra.AvNElytra
 api-version: 1.13
 prefix: AvN Elytra
-authors: [8BitSummoner]
+authors: [8BitSummoner
 description: Custom plugin developed by and for the Avalon Network
 website: avalonmc.ca
 commands:
   avnelytra:
-    description: The base AvN Elytra command.
+    description: The base AvN Elytra command. Please refer to /avnelytra ? for additional information.
     aliases: [avne]
     permission: avnelytra.manage

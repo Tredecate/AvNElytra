@@ -29,7 +29,7 @@ public abstract class AvNElytraCommand implements CommandExecutor {
 	
 	protected void printHelp (CommandSender sender) {
 		
-		sender.sendMessage(messagePrefix + "Incorrect use. Please refer to §d/avnelytra help§7.");
+		sender.sendMessage(messagePrefix + "Incorrect use. Please refer to §d/avnelytra ?§7.");
 		
 	}
 	
