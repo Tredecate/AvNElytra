@@ -13,7 +13,7 @@ import static ca.avalonmc.avnelytra.AvNElytra.messagePrefix;
 
 public class AvNElytraCommandExecutor implements CommandExecutor {
 	
-	private HashMap<String, CommandExecutor> commands = new HashMap<>();
+	private static HashMap<String, AvNElytraCommand> commands = new HashMap<>();
 	
 	
 	public void registerSubCommand (AvNElytraCommand command) {
@@ -23,6 +23,13 @@ public class AvNElytraCommandExecutor implements CommandExecutor {
 			commands.put(label, command);
 			
 		}
+		
+	}
+	
+	
+	public static HashMap<String, AvNElytraCommand> getCommands () {
+		
+		return commands;
 		
 	}
 	
