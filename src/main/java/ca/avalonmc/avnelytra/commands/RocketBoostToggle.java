@@ -1,6 +1,5 @@
 package ca.avalonmc.avnelytra.commands;
 
-import ca.avalonmc.avnelytra.AvNElytraCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
