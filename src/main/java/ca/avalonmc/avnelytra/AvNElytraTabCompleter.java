@@ -71,7 +71,7 @@ public class AvNElytraTabCompleter implements TabCompleter {
 	
 	private String getCommandType (String arg) {
 		
-		if (commands.get(0).toLowerCase().contains(arg.toLowerCase()) || commands.get(1).toLowerCase().contains(arg.toLowerCase()) || commands.get(2).toLowerCase().contains(arg.toLowerCase())) {
+		if (AvNElytra.getAliases().get(0).contains(arg.toLowerCase()) || AvNElytra.getAliases().get(1).contains(arg.toLowerCase()) || AvNElytra.getAliases().get(2).contains(arg.toLowerCase())) {
 			
 			return "boolean";
 			
