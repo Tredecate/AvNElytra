@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 
@@ -72,8 +73,8 @@ public final class AvNElytra extends JavaPlugin {
 		// Register commands
 		getAliasesFromConfig();
 		AvNElytraCommandExecutor executor = new AvNElytraCommandExecutor();
-		getCommand("avnelytra").setExecutor(executor);
-		getCommand("avnelytra").setTabCompleter(new AvNElytraTabCompleter());
+		Objects.requireNonNull(getCommand("avnelytra")).setExecutor(executor);
+		Objects.requireNonNull(getCommand("avnelytra")).setTabCompleter(new AvNElytraTabCompleter());
 		
 		executor.registerSubCommand(new ElytraToggle(elytraAliases, "Toggles elytra flight on and off.", true, "[on/off]"));
 		executor.registerSubCommand(new RocketBoostToggle(rocketBoostAliases, "Toggle firework boosting on and off.", true, "[on/off]"));
