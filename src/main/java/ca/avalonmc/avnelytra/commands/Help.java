@@ -27,7 +27,6 @@ public class Help extends AvNElytraCommand {
 		helpMessage.add("");
 		helpMessage.add("§7------------------- §dAvN Elytra Help §7-------------------");
 		helpMessage.add("");
-		//helpMessage.add("§7Command §d: §7Arguments §d<§7Required§d> [§7Optional§d]");
 		
 		for (AvNElytraCommand comm : commands) {
 			
