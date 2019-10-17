@@ -4,7 +4,7 @@
 
 Elytra:
   Disabled: false
-  Aliases: ["elytratoggle", "", "elytra", "e", "el"]
+  Aliases: ["elytratoggle", "elytra", "e", "el"]
 RocketBoost:
   Disabled: false
   Aliases: ["fireworktoggle", "rockettoggle", "fireworkboosttoggle", "rocketboosttoggle", "firework", "rocket", "f", "r", "fw", "fwr"]

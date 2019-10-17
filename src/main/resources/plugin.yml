@@ -1,7 +1,7 @@
 name: AvNElytra
 version: ${project.version}
 main: ca.avalonmc.avnelytra.AvNElytra
-api-version: 1.13
+api-version: "1.14"
 prefix: AvN Elytra
 authors: [8BitSummoner]
 description: Custom plugin developed by and for the Avalon Network
