@@ -1,10 +1,10 @@
 name: AvNElytra
 version: ${project.version}
 main: ca.avalonmc.avnelytra.AvNElytra
-api-version: "1.14"
+api-version: "1.16"
 prefix: AvN Elytra
 authors: [8BitSummoner]
-description: Custom plugin developed by and for the Avalon Network
+description: Allows for a degree of control over Elytra flight mechanics.
 website: avalonmc.ca
 commands:
   avnelytra:
